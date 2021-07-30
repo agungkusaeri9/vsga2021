@@ -1,3 +1,6 @@
+<?php
+    $title = 'Contact';
+?>
 <?php include('partials/header.php') ?>
     <?php include('partials/navbar.php') ?>
     <div class="container">
