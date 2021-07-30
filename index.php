@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agung Kusaeri</title>
-</head>
-<body>
-    
-    <h2>Pelatihan VSGA 2021</h2>
-
-</body>
-</html>
+<?php include('partials/header.php') ?>
+    <?php include('partials/navbar.php') ?>
+    <h1>Hello, world!</h1>
+<?php include('partials/footer.php') ?>
