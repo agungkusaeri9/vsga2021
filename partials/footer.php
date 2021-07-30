@@ -8,6 +8,16 @@
             alert('Fitur ini belum berjalan !');
             window.location.href = 'index.php';
         })
+
+        $(function(){
+            let cardLink = $('.card-link').attr('href');
+
+            $('.card-link').on('click', function(){
+                if(cardLink == ''){
+                    alert('Belum Ada Tugas');
+                }
+            })
+        })
     </script>
   </body>
 </html>
