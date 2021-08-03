@@ -17,27 +17,27 @@
                 </div>
             </div>
             <div class="col-md-6">
-                    <form action="" method="post" id="formContact">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Website</label>
-                            <input type="text" class="form-control" name="website" placeholder="Website">
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Pesan</label>
-                            <textarea name="pesan" id="pesan" cols="30" rows="3" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary float-right submit">Submit</button>
-                        </div>
-                    </form>
+                <form action="" method="post" id="formContact">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="text" class="form-control" name="website" placeholder="Website">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Pesan</label>
+                        <textarea name="pesan" id="pesan" cols="30" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary float-right submit">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

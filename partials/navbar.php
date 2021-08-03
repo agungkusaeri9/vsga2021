@@ -12,7 +12,8 @@
                 Tugas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="http://vsga2021.test/tugas1/antarmuka-web.php">Tugas 1</a>
+                  <a class="dropdown-item" href="../tugas1/antarmuka-web.php">Tugas 1</a>
+                  <a class="dropdown-item" href="../tugas2/list-buku.php">Tugas 2</a>
                 </div>
             </li>
             <a class="nav-link text-light" href="../contact.php">Contact Us</a>

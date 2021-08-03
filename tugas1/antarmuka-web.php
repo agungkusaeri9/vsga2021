@@ -22,7 +22,7 @@ $title = 'Tugas 1 | Antarmuka Web'
                     </div>
                 </div>
                 <div class="col-md-6 headerImg">
-                    <img src="http://vsga2021.test/assets/img/header.svg" alt="" class="img-fluid">
+                    <img src="../assets/img/header.svg" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@ $title = 'Tugas 1 | Antarmuka Web'
                 <div class="card">
                     <div class="card-body">
                         <div class="text-center">
-                            <img src="http://vsga2021.test/assets/img/avatar.jpg" alt="" class="img-fluid rounded-circle" style="max-height: 200px;">
+                            <img src="../assets/img/avatar.jpg" alt="" class="img-fluid rounded-circle" style="max-height: 200px;">
                         </div>
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped mt-4">
