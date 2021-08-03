@@ -3,7 +3,7 @@
 ?>
 <?php include('partials/header.php') ?>
     <?php include('partials/navbar.php') ?>
-    <div class="container">
+    <div class="container content">
         <div class="row text-center mt-3">
             <div class="col-md-12">
                 <h1>Contact Us</h1>
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                    <form action="" method="post">
+                    <form action="" method="post" id="formContact">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" name="name" placeholder="Name">

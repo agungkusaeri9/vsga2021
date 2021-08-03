@@ -1,23 +1,10 @@
 
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script>
-        $('.submit').on('click', function(e){
-            e.preventDefault();
-            alert('Fitur ini belum berjalan !');
-            window.location.href = 'index.php';
-        })
-
-        $(function(){
-            let cardLink = $('.card-link').attr('href');
-
-            $('.card-link').on('click', function(){
-                if(cardLink == ''){
-                    alert('Belum Ada Tugas');
-                }
-            })
-        })
-    </script>
+    <footer class="bg-dark mt-3" style="margin-bottom:-20px">
+        <p class="text-white text-center p-2">&copy; By Agung Kusaeri</p>
+    </footer>
+    <script src="http://vsga2021.test/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="http://vsga2021.test/assets/js/popper.min.js"></script>
+    <script src="http://vsga2021.test/assets/js/bootstrap.min.js"></script>
+    <script src="http://vsga2021.test/assets/js/script.js"></script>
   </body>
 </html>

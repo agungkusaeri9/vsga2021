@@ -3,7 +3,7 @@
 ?>
 <?php include('partials/header.php') ?>
     <?php include('partials/navbar.php') ?>
-    <div class="container">
+    <div class="container content">
         <div class="row text-center mt-3">
             <div class="col-md-12">
                 <h1>About Us</h1>
