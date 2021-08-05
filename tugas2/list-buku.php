@@ -1,5 +1,9 @@
 <?php
-    $title = 'Tugas 2';
+    include('../app/database.php');
+
+    $sql = "SELECT * from books";
+    $query = mysqli_query($conn,$sql);
+    $title = 'Tugas 2 | Data Buku';
 ?>
 <?php include('../partials/header.php') ?>
     <?php include('../partials/navbar.php') ?>
@@ -15,120 +19,34 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                                <table class="table table-bordered table-striped">
+                                <table class="table table-bordered table-striped" id="bookTable">
                                     <thead>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th>Judul</th>
-                                            <th>Penulis</th>
-                                            <th>Pengarang</th>
-                                            <th>Penerbit</th>
-                                            <th>Tahun Terbit</th>
-                                            <th>Jumlah</th>
+                                            <th>Code</th>
+                                            <th>Title</th>
+                                            <th>Qty</th>
+                                            <th>Publisher</th>
+                                            <th>Publication Year</th>
+                                            <th>Writer</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php $i = 1; ?>
+                                        <?php while($book = mysqli_fetch_assoc($query)) : ?>
                                         <tr>
-                                            <td class="text-center">1</td>
-                                            <td>100 Hari Menuju Sukses</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Media Creative</td>
-                                            <td>2019</td>
-                                            <td>10</td>
+                                            <td class="text-center"><?= $i; ?></td>
+                                            <td><?= $book['code'] ?></td>
+                                            <td><?= $book['title'] ?></td>
+                                            <td><?= $book['qty'] ?></td>
+                                            <td><?= $book['publisher'] ?></td>
+                                            <td><?= $book['publication_year'] ?></td>
+                                            <td><?= $book['writer'] ?></td>
                                             <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Belajar PHP Native</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Koding</td>
-                                            <td>2018</td>
-                                            <td>12</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Belajar HTML</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Koding</td>
-                                            <td>2019</td>
-                                            <td>2</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Belajar CSS</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Koding</td>
-                                            <td>2017</td>
-                                            <td>12</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Belajar Laravel</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Koding</td>
-                                            <td>2021</td>
-                                            <td>12</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Belajar Javascript</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Sekolah Koding</td>
-                                            <td>2018</td>
-                                            <td>5</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>Belajar Codeigniter 3</td>
-                                            <td>Arif Sah</td>
-                                            <td>Ricard OK</td>
-                                            <td>Cv Angin RIbut</td>
-                                            <td>2020</td>
-                                            <td>5</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>Belajar Codeigniter</td>
-                                            <td>Arif Sah</td>
-                                            <td>Ricard OK</td>
-                                            <td>Cv Angin Ribut</td>
-                                            <td>2021</td>
-                                            <td>2</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td>Belajar Bootstrap 4</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Koding</td>
-                                            <td>2019</td>
-                                            <td>5</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>10</td>
-                                            <td>Belajar VB</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Agung Kusaeri</td>
-                                            <td>Cv Koding</td>
-                                            <td>2019</td>
-                                            <td>10</td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
-                                        </tr>
+                                        <?php $i++; ?>
+                                        <?php endwhile; ?>
                                     </tbody>
                                 </table>
                             </div>
