@@ -19,19 +19,29 @@
         $code = $_POST['code'];
         $title = $_POST['title'];
         $description = $_POST['description'];
+        $author = $_POST['author'];
         $qty = $_POST['qty'];
         $publisher = $_POST['publisher'];
         $publication_year = $_POST['publication_year'];
         $writer = $_POST['writer'];
 
-        $sql = "UPDATE `books` SET code = '$code', title = '$title', description = '$description', qty = '$qty', publisher = '$publisher', publication_year = '$publication_year', writer = '$writer' WHERE `id` = '$id'";
-        mysqli_query($conn,$sql);
-        echo "
+        $sql = "UPDATE `books` SET code = '$code', title = '$title', description = '$description', author = '$author', qty = '$qty', publisher = '$publisher', publication_year = '$publication_year', writer = '$writer' WHERE `id` = '$id'";
+        $query = mysqli_query($conn,$sql);
+        if($query){
+            echo "
+                <script>
+                    alert('Data berhasil diupdate');
+                    window.location.href = 'list-buku.php';
+                </script>
+            ";
+        }else{
+            echo "
             <script>
-                alert('Data berhasil diupdate');
+                alert('Data gagal diupdate');
                 window.location.href = 'list-buku.php';
             </script>
         ";
+        }
     }
     
 ?>
@@ -61,6 +71,10 @@
                         <div class="form-group">
                             <label for="qty">Qty</label>
                             <input required type="number" class="form-control" name="qty" placeholder="Qty" value="<?= $book['qty'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input required type="text" class="form-control" name="author" placeholder="Author" value="<?= $book['author'] ?>">
                         </div>
                         <div class="form-group">
                             <label for="publisher">Publisher</label>

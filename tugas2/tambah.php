@@ -7,18 +7,28 @@
         $title = $_POST['title'];
         $description = $_POST['description'];
         $qty = $_POST['qty'];
+        $author = $_POST['author'];
         $publisher = $_POST['publisher'];
         $publication_year = $_POST['publication_year'];
         $writer = $_POST['writer'];
 
-        $sql = "INSERT INTO `books` (`id`, `code`, `title`, `description`, `qty`, `publisher`, `publication_year`, `writer`) VALUES (NULL, '$code', '$title', '$description', '$qty', '$publisher', '$publication_year', '$writer');";
+        $sql = "INSERT INTO `books` (`id`, `code`, `title`, `description`, `qty`, `author`, `publisher`, `publication_year`, `writer`) VALUES (NULL, '$code', '$title', '$description', '$qty', '$author', '$publisher', '$publication_year', '$writer');";
         $query = mysqli_query($conn,$sql);
-        echo "
-            <script>
-                alert('Data buku berhasil ditambahkan');
-                window.location.href = 'list-buku.php';
-            </script>
-        ";
+        if($query){
+            echo "
+                <script>
+                    alert('Data buku berhasil ditambahkan');
+                    window.location.href = 'list-buku.php';
+                </script>
+            ";
+        }else{
+            echo "
+                <script>
+                    alert('Data buku gagal ditambahkan');
+                    window.location.href = 'list-buku.php';
+                </script>
+            ";
+        }
     }
 ?>
 <?php include('../partials/header.php') ?>
@@ -42,11 +52,15 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea name="description" id="description" cols="30" rows="5" class="form-control" placeholder="Description"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="qty">Qty</label>
                             <input required type="number" class="form-control" name="qty" placeholder="Qty">
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input required type="text" class="form-control" name="author" placeholder="Author">
                         </div>
                         <div class="form-group">
                             <label for="publisher">Publisher</label>
@@ -54,7 +68,7 @@
                         </div>
                         <div class="form-group">
                             <label for="publication_year">Publication Year</label>
-                            <input required type="number" class="form-control" name="publication_year" placeholder="Publication Year">
+                            <input required type="text" class="form-control datepicker" name="publication_year" placeholder="Publication Year"  maxlength="4">
                         </div>
                         <div class="form-group">
                             <label for="writer">Writer</label>

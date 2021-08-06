@@ -1,7 +1,7 @@
 <?php
     include('../app/database.php');
 
-    $sql = "SELECT * from books";
+    $sql = "SELECT * FROM `books` ORDER BY code ASC";
     $query = mysqli_query($conn,$sql);
     $title = 'Tugas 2 | Data Buku';
 
@@ -45,6 +45,7 @@
                                             <th class="text-center">#</th>
                                             <th>Code</th>
                                             <th>Title</th>
+                                            <th>Author</th>
                                             <th>Qty</th>
                                             <th>Publisher</th>
                                             <th>Publication Year</th>
@@ -59,6 +60,7 @@
                                             <td class="text-center"><?= $i; ?></td>
                                             <td><?= $book['code'] ?></td>
                                             <td><?= $book['title'] ?></td>
+                                            <td><?= $book['author'] ?></td>
                                             <td><?= $book['qty'] ?></td>
                                             <td><?= $book['publisher'] ?></td>
                                             <td><?= $book['publication_year'] ?></td>
