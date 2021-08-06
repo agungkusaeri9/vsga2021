@@ -4,6 +4,26 @@
     $sql = "SELECT * from books";
     $query = mysqli_query($conn,$sql);
     $title = 'Tugas 2 | Data Buku';
+
+    if(isset($_POST['hapus'])){
+        $id = $_POST['id'];
+        if($id){
+            $sql = "DELETE FROM `books` WHERE id = '$id'";
+            mysqli_query($conn,$sql);
+            echo "
+                <script>
+                    alert('Data berhasil dihapus');
+                    window.location.href = 'list-buku.php';
+                </script>
+            ";
+        }else{
+            echo "
+                <script>
+                    alert('Data gagal dihapus');
+                </script>
+            ";
+        }
+    }
 ?>
 <?php include('../partials/header.php') ?>
     <?php include('../partials/navbar.php') ?>
@@ -43,7 +63,13 @@
                                             <td><?= $book['publisher'] ?></td>
                                             <td><?= $book['publication_year'] ?></td>
                                             <td><?= $book['writer'] ?></td>
-                                            <td><a href="edit.php" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a></td>
+                                            <td>
+                                                <a href="edit.php?id=<?= $book['id'] ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
+                                                <form action="" method="post" class="d-inline">
+                                                    <input type="hidden" name="id" value="<?= $book['id'] ?>">
+                                                    <button class="btn btn-sm btn-danger" name="hapus" onclick="return confirm('Apakah yakin ingin menghapus data ini?')"><i class="fas fa-trash"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                         <?php $i++; ?>
                                         <?php endwhile; ?>

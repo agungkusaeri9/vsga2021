@@ -6,14 +6,12 @@
         $code = $_POST['code'];
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $title);
         $qty = $_POST['qty'];
         $publisher = $_POST['publisher'];
         $publication_year = $_POST['publication_year'];
         $writer = $_POST['writer'];
 
-        // $sql = "INSERT INTO books VALUES('','$code','$title','$slug','$description','$qty','$publisher','$publication_year','$writer')";
-        $sql = "INSERT INTO `books` (`id`, `code`, `title`, `slug`, `description`, `qty`, `publisher`, `publication_year`, `writer`) VALUES (NULL, '$code', '$title', '4slug', '$description', '$qty', '$publisher', '$publication_year', '$writer');";
+        $sql = "INSERT INTO `books` (`id`, `code`, `title`, `description`, `qty`, `publisher`, `publication_year`, `writer`) VALUES (NULL, '$code', '$title', '$description', '$qty', '$publisher', '$publication_year', '$writer');";
         $query = mysqli_query($conn,$sql);
         echo "
             <script>

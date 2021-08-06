@@ -1,5 +1,39 @@
 <?php
+
+    include('../app/database.php');
     $title = 'Tugas 2 | Form Edit';
+
+    $id = $_GET['id'];
+    if($id){
+        $sql = "SELECT * FROM `books` WHERE `id` = '$id'";
+        $query = mysqli_query($conn,$sql);
+        $book = mysqli_fetch_array($query);
+        if(!$book){
+            header("Location: list-buku.php");
+        }
+    }else{
+        header("Location: list-buku.php");
+    }
+
+    if(isset($_POST['submit'])){
+        $code = $_POST['code'];
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $qty = $_POST['qty'];
+        $publisher = $_POST['publisher'];
+        $publication_year = $_POST['publication_year'];
+        $writer = $_POST['writer'];
+
+        $sql = "UPDATE `books` SET code = '$code', title = '$title', description = '$description', qty = '$qty', publisher = '$publisher', publication_year = '$publication_year', writer = '$writer' WHERE `id` = '$id'";
+        mysqli_query($conn,$sql);
+        echo "
+            <script>
+                alert('Data berhasil diupdate');
+                window.location.href = 'list-buku.php';
+            </script>
+        ";
+    }
+    
 ?>
 <?php include('../partials/header.php') ?>
     <?php include('../partials/navbar.php') ?>
@@ -12,29 +46,37 @@
                     </div>
                     <div class="card-body">
                     <form action="" method="post">
-                        <div class="form-group">
-                            <label for="judul">Judul</label>
-                            <input type="text" class="form-control" name="judul" value="Judul Buku">
+                    <div class="form-group">
+                            <label for="code">Code</label>
+                            <input required type="text" class="form-control" name="code" placeholder="Code Buku" value="<?= $book['code'] ?>">
                         </div>
                         <div class="form-group">
-                            <label for="pengarang">Pengarang</label>
-                            <input type="text" class="form-control" name="pengarang" value="Nama Pengarang">
+                            <label for="title">Title</label>
+                            <input required type="text" class="form-control" name="title" placeholder="Title Buku" value="<?= $book['title'] ?>">
                         </div>
                         <div class="form-group">
-                            <label for="penerbit">Penerbit</label>
-                            <input type="text" class="form-control" name="penerbit" value="Penerbit">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" cols="30" rows="5" class="form-control"><?= $book['description'] ?></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="tahun_terbit">Tahun Terbit</label>
-                            <input type="number" class="form-control" name="tahun_terbit" value="2020">
+                            <label for="qty">Qty</label>
+                            <input required type="number" class="form-control" name="qty" placeholder="Qty" value="<?= $book['qty'] ?>">
                         </div>
                         <div class="form-group">
-                            <label for="jumlah">Jumlah Buku</label>
-                            <input type="number" class="form-control" name="jumlah" value="10">
+                            <label for="publisher">Publisher</label>
+                            <input required type="text" class="form-control" name="publisher" placeholder="Publisher" value="<?= $book['publisher'] ?>">
                         </div>
                         <div class="form-group">
-                            <a href="list-buku.php" class="btn btn-warning float-left text-light">Kembali</a>
-                            <button class="btn btn-primary float-right">Update</button>
+                            <label for="publication_year">Publication Year</label>
+                            <input required type="number" class="form-control" name="publication_year" placeholder="Publication Year" value="<?= $book['publication_year'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="writer">Writer</label>
+                            <input required type="text" class="form-control" name="writer" placeholder="Writer" value="<?= $book['writer'] ?>">
+                        </div>
+                        <div class="form-group">
+                            <a href="list-buku.php" class="btn btn-warning float-left text-light">Back</a>
+                            <button class="btn btn-primary float-right" name="submit">Update</button>
                         </div>
                     </form>
                     </div>
