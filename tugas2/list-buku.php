@@ -50,7 +50,7 @@
                                             <th>Publisher</th>
                                             <th>Publication Year</th>
                                             <th>Writer</th>
-                                            <th>Aksi</th>
+                                            <th style="min-width:60px">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

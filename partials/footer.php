@@ -6,11 +6,7 @@
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
     <script src="../assets/js/script.js"></script>
-    <script>
-    $(document).ready( function () {
-        $('#bookTable').DataTable();
-    } );
-    </script>
   </body>
 </html>
